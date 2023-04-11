@@ -1,0 +1,101 @@
+.hamburger{
+    display: none;
+}
+
+:root {
+    --cor_principal: #ECB5C5;
+    --cor_secundaria: #f18989;
+  }
+
+@media(max-width: 600px){
+    .hamburger{
+        display: contents;
+    }
+
+    .menu-lines{
+        z-index: 999;
+        width: 35px;
+        height: 35px;
+        left: (100vw - 40px);
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+
+
+    .check{
+        position: absolute;
+        z-index: 1000;
+        width: 35px;
+        height: 35px;
+        left: calc(100vw - 45px);
+        margin-top: 5px;
+        opacity: 0;
+    }
+
+    .check:hover{
+        cursor: pointer;
+    }
+
+    .menu-lines span{
+        display: block;
+        width: 35px;
+        height: 5px;
+        margin-bottom: 10px;
+        background-color: black;
+        border-radius: 3px;
+        transition: all ease .2s;
+    }
+
+    .hamburger ul{
+        position: absolute;
+        z-index: 998;
+        left: calc(100vw - 80vw);
+        background-color: white;
+        border-left: solid black 2px;
+        border-bottom: solid black 2px;
+        border-top: solid black 2px;
+        height: 200px;
+        width: 80vw;
+        padding-top: 70px;
+        display: none;
+        margin-left: 80vw;
+        transition: all ease .2s;
+    }
+
+    .hamburger ul li{
+        padding: 10px 20px;
+        width: 100%;
+    }
+
+
+    .hamburger ul li a{
+        text-decoration: none;
+        color: black;
+        font-size: 22px;
+    }
+
+    .hamburger ul li:hover{
+        background-color: rgb(175, 175, 175);
+        cursor: pointer;
+    }
+
+    .hamburger input:checked ~ .menu-lines span:nth-child(1){
+        transform-origin: 0% 0%;
+        transform: rotate(45deg) scaleX(1.25);
+    }
+
+    .hamburger input:checked ~ .menu-lines span:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger input:checked ~ .menu-lines span:nth-child(3){
+        transform-origin: 0% 100%;
+        transform: rotate(-45deg) scaleX(1.25);
+    }
+
+    .hamburger input:checked ~ ul{
+        display: block;
+        margin-left: 0;
+    }
+
+}

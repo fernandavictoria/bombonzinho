@@ -1,0 +1,15 @@
+@media (max-width: 700px){
+    .main h1{
+        height: 75%;
+    }
+}
+
+@media (max-width: 600px){
+    .ops{
+        display: none;
+    }
+
+    .hq{
+        grid-template-columns: auto;
+    }
+}
